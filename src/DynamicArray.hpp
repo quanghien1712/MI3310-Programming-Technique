@@ -26,7 +26,7 @@ class DynamicArray {
         }
         
     public:
-           DynamicArray()
+        DynamicArray()
             : currentSize(0), maxSize(1), arr(new T[1]) {}
 
         DynamicArray(const DynamicArray& other)
@@ -34,6 +34,10 @@ class DynamicArray {
             for (int i = 0; i < currentSize; ++i) {
                 arr[i] = other.arr[i];
             }
+        }
+
+        ~DynamicArray() {
+            delete[] arr;
         }
 
         DynamicArray& operator = (const DynamicArray& other) {
@@ -47,10 +51,6 @@ class DynamicArray {
                 }
             }
             return *this;
-        }
-
-        ~DynamicArray() {
-            delete[] arr;
         }
 
         int size() const {
