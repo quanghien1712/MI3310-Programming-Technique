@@ -63,9 +63,9 @@ cd MI3310-Programming-Technique
 ```
 
 ### Bước 2: Biên dịch mã nguồn (Build)
-Sử dụng `g++` để biên dịch toàn bộ các file `.cpp` trong thư mục `src`.
+Chạy Makefile:
 ```bash
-g++ -std=c++11 src\main.cpp src\Transaction.cpp src\Category.cpp src\Budget.cpp src\Report.cpp src\Utils.cpp -I src -o expense_manager.exe
+make
 ```
 
 ### Bước 3: Chạy chương trình (Run)
