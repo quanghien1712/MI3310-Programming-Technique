@@ -69,26 +69,6 @@ class DynamicArray {
             currentSize++;
         }
 
-        T& pop() {
-            if (currentSize == 0) {
-                throw std::out_of_range("Khong co phan tu de lay");
-            }
-            currentSize--;
-            return arr[currentSize];
-        }
-
-        void insert(int index, const T& value) {
-            validateIndex(index);
-            if (currentSize == maxSize) {
-                resize(maxSize * 2);
-            }
-            for (int i = currentSize; i > index; --i) {
-                arr[i] = arr[i - 1];
-            }
-            arr[index] = value;
-            currentSize++;
-        }
-
         void removeAt(int index) {
             validateIndex(index);
             for (int i = index; i < currentSize - 1; ++i) {
