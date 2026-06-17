@@ -209,9 +209,9 @@ int main() {
     TransactionManager transactionManager;
     BudgetManager budgetManager;
 
-    categoryManager.loadData("../data/categories.txt");
-    transactionManager.loadData("../data/transactions.txt");
-    budgetManager.loadData("../data/budgets.txt");
+    categoryManager.loadData("data/categories.txt");
+    transactionManager.loadData("data/transactions.txt");
+    budgetManager.loadData("data/budgets.txt");
 
     Report report(transactionManager, categoryManager, budgetManager);
 
