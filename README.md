@@ -79,12 +79,3 @@ expense_manager.exe
 ```bash
 ./expense_manager
 ```
-
----
-
-## Thành viên nhóm
-
-Họ và tên|MSSV| 
----|---
-Trần Quang Hiển|202418893
-Đỗ Quang Minh|202418948
