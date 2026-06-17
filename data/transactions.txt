@@ -1,0 +1,31 @@
+2026-01-01|8|20000000|T|Luong thang 1
+2026-01-02|2|6000000|C|Tien thue nha thang 1
+2026-01-03|0|150000|C|An sang Pho
+2026-01-05|1|500000|C|Do xang xe may
+2026-01-10|0|500000|C|Di sieu thi Co.op Mart
+2026-01-15|9|2000000|T|Thuong Tet Duong lich
+2026-01-18|5|1200000|C|Mua giay moi
+2026-01-20|3|800000|C|Tien dien nuoc thang 12
+2026-01-25|0|200000|C|Cafe voi ban be
+2026-02-01|8|20000000|T|Luong thang 2
+2026-02-02|2|6000000|C|Tien thue nha thang 2
+2026-02-05|4|1500000|C|Di xem phim va an toi
+2026-02-10|0|300000|C|Mua thuc pham tuan 2
+2026-02-14|5|2000000|C|Qua Valentine
+2026-02-20|1|600000|C|Bao duong xe
+2026-02-25|10|5000000|T|Ban hang online
+2026-03-01|8|22000000|T|Luong thang 3 (tang luong)
+2026-03-02|2|6000000|C|Tien thue nha thang 3
+2026-03-05|6|500000|C|Kham rang dinh ky
+2026-03-10|0|1200000|C|Lien hoan cong ty
+2026-03-15|7|3000000|C|Hoc phi khoa hoc Tieng Anh
+2026-03-20|5|2500000|C|Mua dien thoai cu
+2026-03-25|0|450000|C|An lau cuoi tuan
+2026-03-28|11|100000|C|Gui xe
+2026-04-01|8|22000000|T|Luong thang 4
+2026-04-05|0|250000|C|Mua do an vat
+2026-04-12|1|500000|C|Do xang
+2026-04-20|3|950000|C|Tien dien nuoc thang 3
+2026-05-01|8|22000000|T|Luong thang 5
+2026-05-15|10|3500000|T|Loi nhuan dau tu
+2026-06-01|8|22000000|T|Luong thang 6
