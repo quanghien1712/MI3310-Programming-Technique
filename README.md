@@ -36,7 +36,7 @@ KTLT/
 │   ├── categories.txt       # Lưu danh sách các danh mục thu/chi
 │   └── transactions.txt     # Lưu chi tiết lịch sử giao dịch
 │
-├── src/                     # Thư mục chứa toàn bộ mã nguồn C++
+├── src/                     # Thư mục chứa toàn bộ mã nguồn
 │   ├── Budget.hpp / .cpp    # Xử lý logic và thực thể Ngân sách
 │   ├── Category.hpp / .cpp  # Xử lý logic và thực thể Danh mục
 │   ├── DynamicArray.hpp     # Template mảng động tự cài đặt (Generic Array)
@@ -44,6 +44,17 @@ KTLT/
 │   ├── Transaction.hpp / .cpp # Xử lý logic và thực thể Giao dịch
 │   ├── Utils.hpp / .cpp     # Cung cấp các hàm tiện ích dùng chung
 │   └── main.cpp             # Điểm đầu vào (Entry point), chứa UI Menu
+│
+│── libs/ # Chứa framework GGTest để unit test
+│
+│── tests/ # Chứa các mã nguồn unit test
+│   ├── BudgetTest.cpp        # Test Budget, BudgetManager
+│   ├── CategoryTest.cpp      # Test Category, CategoryManager
+│   ├── DynamicArrayTest.cpp  # Test DynamicArray    
+│   ├── ReportTest.cpp        # Test Report, ReportManager
+│   └── UtilsTest.cpp         # Test Utils
+│
+│── Makefile # file để build nhanh
 │
 └── README.md                # Tài liệu mô tả dự án
 ```
@@ -63,19 +74,41 @@ cd MI3310-Programming-Technique
 ```
 
 ### Bước 2: Biên dịch mã nguồn (Build)
-Chạy Makefile:
+
+**1. Biên dịch chương trình chính (App)**
 ```bash
-make
+make app
+# Hoặc chỉ cần gõ lệnh mặc định: make
 ```
+
+**2. Biên dịch toàn bộ Unit Test (GTest)**
+```bash
+make test
+```
+
+**3. Biên dịch một file Test cụ thể**
+```bash
+make test TEST_FILE=tests/ten_file_test.cpp
+```
+
+**4. Dọn dẹp môi trường (Clean)**
+Xóa các file thực thi cũ trước khi muốn biên dịch lại từ đầu.
+```bash
+make clean
+```
+
+---
 
 ### Bước 3: Chạy chương trình (Run)
 
-- **Trên Windows:**
-```bash
-expense_manager.exe
-```
+Sau khi quá trình biên dịch báo thành công, hãy chạy các file thực thi tương ứng:
 
-- **Trên macOS / Linux:**
-```bash
-./expense_manager
-```
+* **Chạy ứng dụng chính:**
+  ```bash
+  ./expense_manager
+  ```
+
+* **Chạy Test:**
+  ```bash
+  ./run_tests
+  ```
