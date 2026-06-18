@@ -94,7 +94,7 @@ void TransactionManager::loadData(const string& fileName) {
         amount = stoll(tmp);
 
         getline(ss, tmp, '|');
-        if (tmp.empty()) {
+        if (tmp.empty() || tmp.size() != 1) {
             continue;
         }
         type = tmp[0];

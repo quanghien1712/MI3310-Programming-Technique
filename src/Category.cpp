@@ -53,7 +53,7 @@ void CategoryManager::loadData(const string& fileName) {
 
         getline(ss, name, '|');
         getline(ss, tmp, '|');
-        if (tmp.empty()) {
+        if (tmp.empty() || tmp.size() != 1) {
             continue;
         }
         type = tmp[0];
