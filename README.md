@@ -62,12 +62,12 @@ KTLT/
 
 ## Yêu cầu tiền quyết (Prerequisites)
 
-Dự án sử dụng **CMake** làm hệ thống quản lý biên dịch tự động. Để chạy dự án, máy tính của bạn cần có:
+Dự án hỗ trợ biên dịch tự động bằng **CMake** (Khuyên dùng) hoặc biên dịch thủ công. Để chạy dự án, máy tính của bạn cần đáp ứng:
 
-1. **Trình biên dịch C++:** Hỗ trợ tiêu chuẩn C++14 trở lên (GCC, Clang, hoặc MSVC).
-2. **CMake (>= 3.10):** Công cụ sinh mã tự động.
+1. **Trình biên dịch C++:** Hỗ trợ tiêu chuẩn C++14 trở lên (như MinGW GCC, Clang, hoặc MSVC).
+2. **CMake (>= 3.10):** Công cụ quản lý biên dịch (Nếu bạn chọn cấu hình theo Cách 1).
 
-## Hướng dẫn Biên dịch và Chạy (Sử dụng CMake)
+## Cách 1: Hướng dẫn Biên dịch bằng CMake (Khuyên dùng)
 
 ### Bước 1: Sao chép dự án (Clone Repository)
 Mở Terminal / Command Prompt và chạy lệnh:
@@ -98,13 +98,27 @@ cmake --build . --target build_test
 
 
 ---
+## Cách 2: Hướng dẫn Biên dịch trực tiếp
 
-### Bước 4: Chạy chương trình (Run)
+### Bước 1: Mở Terminal tại thư mục gốc MI3310-Programming-Technique
+
+
+### Bước 2: Gõ lệnh biên dịch (Compile)
+```bash
+# Biên dịch chương trình chính
+g++ -o expense_manager.exe src/main.cpp src/Budget.cpp src/Category.cpp src/Report.cpp src/Transaction.cpp src/Utils.cpp -std=c++14
+
+# Biên dịch toàn bộ Unit Test
+g++ -std=c++14 -pthread src/Budget.cpp src/Category.cpp src/Transaction.cpp src/Utils.cpp tests/TransactionTest.cpp  tests/BudgetTest.cpp tests/CategoryTest.cpp tests/DynamicArrayTest.cpp tests/UtilsTest.cpp libs/googletest/src/gtest-all.cc libs/googletest/src/gtest_main.cc -Isrc -Ilibs/googletest/include -Ilibs/googletest -o run_tests
+```
+---
+
+## Chạy chương trình (Run)
 
 LƯU Ý: Ứng dụng cần truy cập vào thư mục data/. Do đó, sau khi biên dịch xong, bạn bắt buộc phải lùi ra thư mục gốc trước khi chạy lệnh.
 
 ```bash
-# Lùi ra ngoài thư mục gốc:
+# Lùi ra ngoài thư mục gốc nếu dùng CMake để biên dịch:
 cd ..
 ```
 * **Chạy ứng dụng chính:**
