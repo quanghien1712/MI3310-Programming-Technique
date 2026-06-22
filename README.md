@@ -54,17 +54,20 @@ KTLT/
 │   ├── ReportTest.cpp        # Test Report, ReportManager
 │   └── UtilsTest.cpp         # Test Utils
 │
-│── Makefile # file để build nhanh
+│── CMakeLists.txt           # File cấu hình biên dịch hệ thống
 │
-└── README.md                # Tài liệu mô tả dự án
+└── README.md                # Tài liệu mô tả dự án`
 ```
 ---
 
-## Biên dịch và Chạy
+## Yêu cầu tiền quyết (Prerequisites)
 
-Chương trình yêu cầu trình biên dịch C++ hỗ trợ tiêu chuẩn C++11 trở lên (như MinGW GCC, Clang, hoặc MSVC). 
+Dự án sử dụng **CMake** làm hệ thống quản lý biên dịch tự động. Để chạy dự án, máy tính của bạn cần có:
 
-Thực hiện các bước sau để sao chép mã nguồn, biên dịch và chạy:
+1. **Trình biên dịch C++:** Hỗ trợ tiêu chuẩn C++14 trở lên (GCC, Clang, hoặc MSVC).
+2. **CMake (>= 3.10):** Công cụ sinh mã tự động.
+
+## Hướng dẫn Biên dịch và Chạy (Sử dụng CMake)
 
 ### Bước 1: Sao chép dự án (Clone Repository)
 Mở Terminal / Command Prompt và chạy lệnh:
@@ -73,42 +76,52 @@ git clone https://github.com/quanghien1712/MI3310-Programming-Technique.git
 cd MI3310-Programming-Technique
 ```
 
-### Bước 2: Biên dịch mã nguồn (Build)
+### Bước 2: Khởi tạo cấu hình CMake
 
 **1. Biên dịch chương trình chính (App)**
 ```bash
-make app
-# Hoặc chỉ cần gõ lệnh mặc định: make
+mkdir build
+cd build
+
+# 1. Dành cho macOS, Linux, hoặc Windows sử dụng Visual Studio:
+cmake ..
+
+# 2. Dành riêng cho Windows sử dụng bộ công cụ MSYS2/MinGW:
+cmake .. -G "Unix Makefiles"
+```
+### Bước 3: Biên dịch mã nguồn (Build)
+```bash
+# Biên dịch ứng dụng chính
+cmake --build .
+
+# (Tùy chọn) Biên dịch gộp toàn bộ Unit Test
+cmake --build . --target build_test
 ```
 
-**2. Biên dịch toàn bộ Unit Test (GTest)**
-```bash
-make test
-```
-
-**3. Biên dịch một file Test cụ thể**
-```bash
-make test TEST_FILE=tests/ten_file_test.cpp
-```
-
-**4. Dọn dẹp môi trường (Clean)**
-Xóa các file thực thi cũ trước khi muốn biên dịch lại từ đầu.
-```bash
-make clean
-```
 
 ---
 
-### Bước 3: Chạy chương trình (Run)
+### Bước 4: Chạy chương trình (Run)
 
-Sau khi quá trình biên dịch báo thành công, hãy chạy các file thực thi tương ứng:
+LƯU Ý: Ứng dụng cần truy cập vào thư mục data/. Do đó, sau khi biên dịch xong, bạn bắt buộc phải lùi ra thư mục gốc trước khi chạy lệnh.
 
+```bash
+# Lùi ra ngoài thư mục gốc:
+cd ..
+```
 * **Chạy ứng dụng chính:**
-  ```bash
-  ./expense_manager
-  ```
+```bash
+# Trên Linux/macOS
+./expense_manager
 
-* **Chạy Test:**
-  ```bash
-  ./run_tests
-  ```
+# Trên Windows: 
+.\expense_manager.exe
+```
+* **Chạy Unit Test**
+```bash
+# Trên Linux/macOS
+./run_tests
+
+# Trên Windows: 
+.\run_tests.exe
+```
