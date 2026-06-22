@@ -77,8 +77,6 @@ cd MI3310-Programming-Technique
 ```
 
 ### Bước 2: Khởi tạo cấu hình CMake
-
-**1. Biên dịch chương trình chính (App)**
 ```bash
 mkdir build
 cd build
