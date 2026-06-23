@@ -98,7 +98,7 @@ cmake --build . --target build_test
 
 
 ---
-## Cách 2: Hướng dẫn Biên dịch trực tiếp
+## Cách 2: Hướng dẫn Biên dịch trực tiếp bằng GCC
 
 ### Bước 1: Mở Terminal tại thư mục gốc MI3310-Programming-Technique
 
